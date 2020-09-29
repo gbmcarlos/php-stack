@@ -7,12 +7,9 @@
 
 FROM gbmcarlos/php-base as base
 
-### Replace bref's Lambda executable bootstrap with our own
+# TODO download the bootstrap phar from gbmcarlos/php-runtime, when it's finished
 RUN rm /opt/bootstrap
-COPY bootstrap /opt/bootstrap
-
-# TODO download the phar from gbmcarlos/php-runtime, when it's finished
-RUN touch /opt/php-runtime.phar
+RUN touch /opt/bootstrap
 
 ### Bref adds this env var. Remove it. AWS Lambda will add it when it's time
 ENV LAMBDA_TASK_ROOT=""

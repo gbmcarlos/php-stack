@@ -15,7 +15,7 @@ Metadata:
     SemanticVersion: '0.1.1'
 
 Resources:
-  PhpBinLayer:
+  PhpRuntimeLayer:
     Type: AWS::Serverless::LayerVersion
     Properties:
       LayerName: php-74-runtime
