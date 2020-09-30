@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: This SAM Application provides the base Lambda Layers to run PHP projects as Lambda Functions
+Description: This SAM Application provides the base Lambda Layer to run PHP projects as Lambda Functions
 
 Metadata:
   AWS::ServerlessRepo::Application:
@@ -15,7 +15,7 @@ Metadata:
     SemanticVersion: '0.1.1'
 
 Resources:
-  PhpRuntimeLayer:
+  Php74RuntimeLayer:
     Type: AWS::Serverless::LayerVersion
     Properties:
       LayerName: php-74-runtime
@@ -23,13 +23,13 @@ Resources:
       CompatibleRuntimes:
         - provided
       ContentUri: ./php-runtime.zip
-  LatestPhpBinLayerParameter:
+  Php74RuntimeLayerParameter:
     Type: AWS::SSM::Parameter
     Properties:
-      Name: latest-php-74-runtime-layer
+      Name: php-74-runtime-layer
       Type: String
-      Value: !Ref PhpBinLayer
+      Value: !Ref Php74RuntimeLayer
 Outputs:
   PhpBinLayerArn:
-    Value: !Ref PhpBinLayer
-    Description: ARN of the latest PHP bin layer
+    Value: !Ref Php74RuntimeLayerParameter
+    Description: ARN of the PHP 7.4 runtime layer
