@@ -15,4 +15,4 @@ build:
 
 # Empty publish because the parent make will push the docker image
 publish: build
-	docker push ${IMAGE_REPO}
+	docker push ${IMAGE_USER}/${IMAGE_REPO}

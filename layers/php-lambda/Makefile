@@ -30,4 +30,4 @@ package: extract
 
 # Package the SAM template
 publish: package
-	docker push ${IMAGE_REPO}
+	docker push ${IMAGE_USER}/${IMAGE_REPO}

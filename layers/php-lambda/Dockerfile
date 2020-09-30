@@ -5,11 +5,11 @@
 # It also contains our generic bootstrap file
 #####
 
+FROM gbmcarlos/php-runtime as runtime
+
 FROM gbmcarlos/php-base as base
 
-# TODO download the bootstrap phar from gbmcarlos/php-runtime, when it's finished
-RUN rm /opt/bootstrap
-RUN touch /opt/bootstrap
+COPY --from=runtime /var/task/build/bootstrap /opt/bootstrap
 
 ### Bref adds this env var. Remove it. AWS Lambda will add it when it's time
 ENV LAMBDA_TASK_ROOT=""
