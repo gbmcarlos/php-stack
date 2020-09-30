@@ -9,7 +9,7 @@ export IMAGE_USER := gbmcarlos
 export IMAGE_TAG := latest
 
 # Delegate 'build' and 'publish' to each layer
-build: $(layers)
+publish build: $(layers)
 
 # php-api and php-web depend on php-nginx
 php-api php-web: php-nginx
