@@ -12,7 +12,7 @@ Metadata:
     ReadmeUrl: ./aws-sar/README.md
     HomePageUrl: https://github.com/gbmcarlos/php-stack
     SourceCodeUrl: https://github.com/gbmcarlos/php-stack
-    SemanticVersion: '0.2.0'
+    SemanticVersion: '0.3.0'
 
 Resources:
   Php74RuntimeLayer:
