@@ -18,6 +18,7 @@ Installs Composer from their official Docker image.
 Uses [*PHP Base*](#php-base) as base image.
 Installs a [PHP Runtime](https://github.com/gbmcarlos/php-runtime) from the Docker image.
 It also contains instructions to extract all the necessary files as a zip file, create a Lambda Layer with it, and create a public AWS Serverless Application with the Layer.
+More details in [the layer's README](layers/php-lambda/aws-sar/README.md)
 
 ### PHP Nginx
 Uses [*PHP Lambda*](#php-lambda) as base image.

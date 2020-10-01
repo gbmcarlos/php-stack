@@ -9,7 +9,7 @@ FROM gbmcarlos/php-runtime as runtime
 
 FROM gbmcarlos/php-base as base
 
-COPY --from=runtime /var/task/build/bootstrap /opt/bootstrap
+COPY --from=runtime /opt/bootstrap /opt/bootstrap
 
 ### Bref adds this env var. Remove it. AWS Lambda will add it when it's time
 ENV LAMBDA_TASK_ROOT=""
