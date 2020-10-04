@@ -9,7 +9,7 @@ phases:
             - echo ${DOCKER_HUB_PASSWORD} | docker login --username ${DOCKER_HUB_USERNAME} --password-stdin
     build:
         commands:
-            - make TARGET=publish SAM_ARTIFACTS_BUCKET=${SAM_ARTIFACTS_BUCKET}
+            - make IMAGE_TAG=${IMAGE_TAG} TARGET=publish SAM_ARTIFACTS_BUCKET=${SAM_ARTIFACTS_BUCKET}
 artifacts:
     files:
         - layers/php-lambda/sam-output.yaml
