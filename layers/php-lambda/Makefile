@@ -28,7 +28,7 @@ package: extract
      	--s3-bucket ${SAM_ARTIFACTS_BUCKET} \
      	--output-template-file sam-output.yaml
 
-publish: build
+publish: package
 	docker tag ${IMAGE_USER}/${IMAGE_REPO} ${IMAGE_USER}/${IMAGE_REPO}:latest
 	docker tag ${IMAGE_USER}/${IMAGE_REPO} ${IMAGE_USER}/${IMAGE_REPO}:${IMAGE_TAG}
 	docker push ${IMAGE_USER}/${IMAGE_REPO}
