@@ -1,5 +1,5 @@
 ## What's this
-The purpose of this project is to build a set of PHP environments as Docker images. It also contains an AWS Serverless Application to provide PHP support for Lambda functions
+The purpose of this project is to build a set of PHP environments as Docker images.
 
 ## Stack
 - [**PHP Base**](#php-base): Based on the PHP binaries of [Bref](http://bref.sh/), install composer and a production-ready ini config file
@@ -17,8 +17,6 @@ Installs Composer from their official Docker image.
 ### PHP Lambda
 Uses [*PHP Base*](#php-base) as base image.
 Installs a [PHP Runtime](https://github.com/gbmcarlos/php-runtime) from the Docker image.
-It also contains instructions to extract all the necessary files as a zip file, create a Lambda Layer with it, and create a public AWS Serverless Application with the Layer.
-More details in [the layer's README](layers/php-lambda/aws-sar/README.md)
 
 ### PHP Nginx
 Uses [*PHP Lambda*](#php-lambda) as base image.
