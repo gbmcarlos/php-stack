@@ -10,7 +10,3 @@ phases:
     build:
         commands:
             - make IMAGE_TAG=${IMAGE_TAG} TARGET=publish SAM_ARTIFACTS_BUCKET=${SAM_ARTIFACTS_BUCKET}
-artifacts:
-    files:
-        - layers/php-lambda/sam-output.yaml
-    discard-paths: yes

@@ -10,7 +10,7 @@ export IMAGE_REPO := php-api
 build:
 	docker build \
 	-t ${IMAGE_USER}/${IMAGE_REPO} \
-	--target stack \
+	--target base \
 	${CURDIR}
 
 publish: build

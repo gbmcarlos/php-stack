@@ -7,9 +7,6 @@ export IMAGE_TAG := latest
 
 export IMAGE_REPO := php-base
 
-test:
-	echo ${IMAGE_REPO}
-
 build:
 	docker build \
 	-t ${IMAGE_USER}/${IMAGE_REPO} \
