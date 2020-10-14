@@ -1,5 +1,5 @@
 #####
-# This image builds upon the base PHP+NGINX image
+# This image builds upon php-nginx
 # Here we are going to set the instructions necessary to have a full Lumen project running
 # All these instrucionts will be executed on the downstream Dockerfile (the Dockerfile that uses this image as FROM)
 #####

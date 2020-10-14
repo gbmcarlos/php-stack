@@ -1,8 +1,7 @@
 #####
-# This image builds upon the base PHP image
+# This image builds upon php-lambda
 # Here we are going to 1) install and configure nginx and 2) install the init script, which will start and controll Nginx and PHP-FPM
 # The result is an image upon which we can run PHP web applications
-# It also contains our generic bootstrap file
 #####
 
 FROM gbmcarlos/php-lambda as base

@@ -2,7 +2,6 @@
 # This image builds upon Bref's compiled php
 # Here we are going to fix a few things and replace a few others
 # The result is an image where /opt contains everything required to execute PHP (+php-fpm, +composer)
-# It also contains our generic bootstrap file
 #####
 
 ## Composer
