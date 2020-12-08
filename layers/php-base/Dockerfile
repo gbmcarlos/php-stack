@@ -12,7 +12,7 @@ FROM composer:2.0 as target-composer
 ### We extract php's production-ready config file from this image
 FROM php:7.4 as target-php
 
-FROM bref/php-74-fpm-dev as base
+FROM bref/php-74-fpm-dev:0.5.31 as base
 
 ### We need to switch to root to use yum
 USER root
