@@ -8,8 +8,8 @@ FROM gbmcarlos/php-lambda as base
 
 ## System dependencies
 RUN     yum clean all \
-    &&  yum update -y \
-    &&  yum install -y \
+    &&  yum -y update \
+    &&  yum -y install \
             nginx
 
 ### Set up permissions
