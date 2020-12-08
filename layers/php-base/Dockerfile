@@ -12,25 +12,20 @@ FROM composer:2.0 as target-composer
 ### We extract php's production-ready config file from this image
 FROM php:7.4 as target-php
 
-## PHP GD extension
-### The GD extension is not installed by default, so we have to extract it from a separate image
-FROM bref/extra-gd-php-74:0.8 as gd-extra
-
-## Base PHP
-### We start with this image as base
-FROM bref/php-74-fpm-dev:1.0.0 as base
+FROM bref/php-74-fpm-dev as base
 
 ### We need to switch to root to use yum
 USER root
 
-### Add the GD extension
-### (https://github.com/brefphp/extra-php-extensions#local-development)
-COPY --from=gd-extra /opt /opt
-
+### For some reason, shadow-utils's commands (groupadd and the likes), aren't there, so we need to remove and install it again
+### According to https://forums.aws.amazon.com/thread.jspa?messageID=755409&tstart=0, we need to install yum-plugin-ovl to avoid errors like "Rpmdb checksum is invalid"
 ### vim, htop, less and tree are utilities to work inside the container more comfortably
 ### git, zip and unzip are necessary for Composer to install dependencies
-RUN     amazon-linux-extras install -y epel \
-    &&  yum -y install \
+RUN     yum remove -y \
+            shadow-utils \
+    &&  yum install -y \
+            shadow-utils \
+            yum-plugin-ovl \
             vim htop less tree \
             git zip unzip
 
