@@ -6,7 +6,7 @@
 
 ## Composer
 ### We extract composer executable from this image
-FROM composer:1.9.1 as target-composer
+FROM composer:2.0 as target-composer
 
 ## PHP config
 ### We extract php's production-ready config file from this image
