@@ -12,19 +12,15 @@ FROM composer:2.0 as target-composer
 ### We extract php's production-ready config file from this image
 FROM php:7.4 as target-php
 
-FROM bref/php-74-fpm-dev:0.5.31 as base
+FROM bref/php-74-fpm-dev:1.0.2 as base
 
 ### We need to switch to root to use yum
 USER root
 
-### For some reason, shadow-utils's commands (groupadd and the likes), aren't there, so we need to remove and install it again
 ### According to https://forums.aws.amazon.com/thread.jspa?messageID=755409&tstart=0, we need to install yum-plugin-ovl to avoid errors like "Rpmdb checksum is invalid"
 ### vim, htop, less and tree are utilities to work inside the container more comfortably
 ### git, zip and unzip are necessary for Composer to install dependencies
-RUN     yum remove -y \
-            shadow-utils \
-    &&  yum install -y \
-            shadow-utils \
+RUN     yum install -y \
             yum-plugin-ovl \
             vim htop less tree \
             git zip unzip

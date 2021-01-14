@@ -7,10 +7,7 @@
 FROM gbmcarlos/php-lambda as base
 
 ## System dependencies
-RUN     yum clean all \
-    &&  yum update -y \
-    &&  yum install -y \
-            nginx
+RUN amazon-linux-extras install nginx1.12
 
 ### Set up permissions
 RUN     groupadd www \
