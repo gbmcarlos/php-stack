@@ -1,5 +1,5 @@
 # Location of the layers
-layers := layers/php-base layers/php-lambda layers/php-nginx layers/php-api layers/php-web
+layers := layers/php-base layers/php-extensions layers/php-lambda layers/php-nginx layers/php-api layers/php-web
 
 # The available targets and the default target
 .PHONY: publish build $(layers)
@@ -19,6 +19,9 @@ php-nginx: $(php-lambda)
 
 # php-lambda depends on php-base
 php-lambda: $(php-base)
+
+# php-extensions depends on php-base
+php-extensions: $(php-base)
 
 # The way to make each layer is to sub-make them in their directory
 $(layers):
