@@ -7,7 +7,8 @@
 FROM gbmcarlos/php-lambda as base
 
 ## System dependencies
-RUN amazon-linux-extras install nginx1.12
+RUN amazon-linux-extras install \
+        nginx1.12
 
 ### Set up permissions
 RUN     groupadd www \
