@@ -12,7 +12,7 @@ FROM composer:2.0 as target-composer
 ### We extract php's production-ready config file from this image
 FROM php:7.4 as target-php
 
-FROM bref/php-74-fpm-dev:1.0.2 as base
+FROM bref/php-74-fpm-dev:1.1.1 as base
 
 ### We need to switch to root to use yum
 USER root
@@ -21,6 +21,7 @@ USER root
 ### vim, htop, less and tree are utilities to work inside the container more comfortably
 ### git, zip and unzip are necessary for Composer to install dependencies
 RUN     yum install -y \
+            amazon-linux-extras \
             yum-plugin-ovl \
             vim htop less tree \
             git zip unzip
