@@ -4,7 +4,7 @@
 # The result is an image upon which we can run PHP web applications
 #####
 
-FROM gbmcarlos/php-lambda as base
+FROM gbmcarlos/php-lambda:2.0.0 as base
 
 ## System dependencies
 RUN amazon-linux-extras install \

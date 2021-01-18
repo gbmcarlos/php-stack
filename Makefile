@@ -5,8 +5,8 @@ layers := php-base php-extensions php-lambda php-nginx php-api php-web
 .PHONY: publish build $(layers)
 .DEFAULT_GOAL := build
 
-export IMAGE_USER := gbmcarlos
-export IMAGE_TAG := latest
+export IMAGE_USER ?= gbmcarlos
+export IMAGE_TAG ?= 2.0.0
 
 # Delegate 'build' and 'publish' to each layer
 publish build: $(layers)
@@ -25,4 +25,4 @@ php-extensions: $(php-base)
 
 # The way to make each layer is to sub-make them in their directory
 $(layers):
-	$(MAKE) -C "layers/$@" $(TARGET)
+	$(MAKE) IMAGE_TAG=$(IMAGE_TAG) -C "layers/$@" $(TARGET)

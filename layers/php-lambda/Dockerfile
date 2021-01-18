@@ -3,6 +3,6 @@
 # Here we are going to add gbmcarlos/php-runtime's PHP Runtime Interface Client
 #####
 
-FROM gbmcarlos/php-base as base
+FROM gbmcarlos/php-base:2.0.0 as base
 
-COPY --from=gbmcarlos/php-runtime:1.0.0 /opt /opt
+COPY --from=gbmcarlos/php-runtime:2.0.0 /opt /opt

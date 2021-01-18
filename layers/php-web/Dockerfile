@@ -4,7 +4,7 @@
 # All these instrucionts will be executed on the downstream Dockerfile (the Dockerfile that uses this image as FROM)
 #####
 
-FROM gbmcarlos/php-nginx as base
+FROM gbmcarlos/php-nginx:2.0.0 as base
 
 ARG NODEJS_VERSION=10
 
