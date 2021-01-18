@@ -5,4 +5,4 @@
 
 FROM gbmcarlos/php-base as base
 
-COPY --from=gbmcarlos/php-runtime /opt /opt
+COPY --from=gbmcarlos/php-runtime:1.0.0 /opt /opt
