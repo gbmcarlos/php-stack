@@ -5,7 +5,7 @@
 
 ARG DD_VERSION=0.53.0
 
-FROM bref/build-php-74:1.0.2 as build
+FROM bref/build-php-74:1.1.1 as build
 
 ARG DD_VERSION
 
