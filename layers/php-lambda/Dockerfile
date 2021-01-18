@@ -3,7 +3,7 @@
 # Here we are going to add gbmcarlos/php-runtime's PHP Lambda Runtime
 #####
 
-FROM gbmcarlos/php-runtime as runtime
+FROM gbmcarlos/php-runtime:1.0.0 as runtime
 
 FROM gbmcarlos/php-base as base
 
