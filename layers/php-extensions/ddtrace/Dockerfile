@@ -3,7 +3,7 @@
 # Download the source code of ddtrace, `make` it, and isolate in a clean image
 #####
 
-ARG DD_VERSION=0.53.0
+ARG DD_VERSION=0.54.0
 
 FROM bref/build-php-74:1.1.1 as build
 
@@ -24,7 +24,9 @@ RUN     cd dd-trace-php-${DD_VERSION} \
 
 FROM scratch as base
 
+ARG DD_VERSION
+
 # Copy things we installed to the final image
 
 COPY --from=build /opt/bref/lib/php/extensions/no-debug-non-zts-20190902/ddtrace.so /opt/bref/lib/php/extensions/no-debug-non-zts-20190902/ddtrace.so
-COPY --from=build /tmp/build/php/dd-trace-php-0.53.0 /opt/bref/lib/php/extensions/dd-trace-php-0.53.0
+COPY --from=build /tmp/build/php/dd-trace-php-${DD_VERSION} /opt/bref/lib/php/extensions/dd-trace-php-${DD_VERSION}
