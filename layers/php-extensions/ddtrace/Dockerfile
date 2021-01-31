@@ -22,6 +22,11 @@ RUN     cd dd-trace-php-${DD_VERSION} \
     &&  make \
     &&  make install
 
+RUN echo $'\
+extension=ddtrace.so \n\
+ddtrace.request_init_hook=/opt/bref/lib/php/extensions/dd-trace-php-0.54.0/bridge/dd_wrap_autoloader.php' \
+    > /tmp/ext.ini
+
 FROM scratch as base
 
 ARG DD_VERSION
@@ -30,3 +35,4 @@ ARG DD_VERSION
 
 COPY --from=build /opt/bref/lib/php/extensions/no-debug-non-zts-20190902/ddtrace.so /opt/bref/lib/php/extensions/no-debug-non-zts-20190902/ddtrace.so
 COPY --from=build /tmp/build/php/dd-trace-php-${DD_VERSION} /opt/bref/lib/php/extensions/dd-trace-php-${DD_VERSION}
+COPY --from=build /tmp/ext.ini /opt/bref/etc/php/conf.d/ext-ddtrace.ini

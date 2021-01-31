@@ -12,7 +12,7 @@ FROM composer:2.0 as target-composer
 ### We extract php's production-ready config file from this image
 FROM php:7.4 as target-php
 
-FROM bref/php-74-fpm-dev:1.1.1 as base
+FROM bref/php-74-fpm:1.1.1 as base
 
 ### We need to switch to root to use yum
 USER root
@@ -35,3 +35,5 @@ COPY --from=target-composer /usr/bin/composer /opt/bin/composer
 
 ### Add /usr/sbin to the path
 ENV PATH="/usr/sbin:${PATH}"
+
+ENTRYPOINT []
