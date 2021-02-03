@@ -70,7 +70,7 @@ Uses [*PHP Nginx*](#php-nginx) as base image.
 
 ### PHP Web
 
-Available as `gbmcarlos/php-api`.
+Available as `gbmcarlos/php-web`.
 
 Uses [*PHP Nginx*](#php-nginx) as base image.
 
