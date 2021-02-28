@@ -14,7 +14,7 @@ RUN     curl -sL https://github.com/DataDog/dd-trace-php/releases/download/${DD_
 
 RUN echo $'\
 extension=/opt/datadog-php/extensions/no-debug-non-zts-20190902/ddtrace.so \n\
-ddtrace.request_init_hook=/opt/bref/lib/php/extensions/dd-trace-php-0.54.0/bridge/dd_wrap_autoloader.php' \
+ddtrace.request_init_hook=/opt/datadog-php/dd-trace-sources/bridge/dd_wrap_autoloader.php' \
     > /tmp/ext.ini
 
 FROM scratch as base
