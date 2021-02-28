@@ -35,7 +35,7 @@ COPY --from=gbmcarlos/php-ext-{extension-name} /opt /opt
 ```
 
 Extensions:
-- [`ddtracer` (Datadog Tracer)](https://docs.datadoghq.com/tracing/faq/php-tracer-manual-installation/#install-from-source)
+- [`ddtrace` (Datadog Tracer)](https://docs.datadoghq.com/tracing/faq/php-tracer-manual-installation/#install-from-source)
 
 ### PHP Lambda
 

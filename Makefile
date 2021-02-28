@@ -6,7 +6,7 @@ layers := php-base php-extensions php-lambda php-nginx php-api php-web
 .DEFAULT_GOAL := build
 
 export IMAGE_USER ?= gbmcarlos
-export IMAGE_TAG ?= 2.0.0
+export IMAGE_TAG ?= 2.0.1
 
 # Delegate 'build' and 'publish' to each layer
 publish build: $(layers)
