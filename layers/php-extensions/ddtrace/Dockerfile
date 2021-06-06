@@ -3,9 +3,12 @@
 # Download the source code of ddtrace, generate the ini file, and isolate them a clean image
 #####
 
-ARG DD_VERSION=0.55.0
+ARG DD_VERSION
 
-FROM bref/build-php-74:1.1.1 as build
+ARG PHP_VERSION_SHORT
+ARG BREF_VERSION
+
+FROM bref/build-php-${PHP_VERSION_SHORT}:${BREF_VERSION} as build
 
 ARG DD_VERSION
 

@@ -7,10 +7,13 @@ export IMAGE_TAG := latest
 
 export IMAGE_REPO := php-web
 
+export PHP_NGINX_VERSION := ${IMAGE_TAG}
+
 build:
 	docker build \
 	-t ${IMAGE_USER}/${IMAGE_REPO}:${IMAGE_TAG} \
 	--target base \
+	--build-arg PHP_NGINX_VERSION \
 	${CURDIR}
 
 publish: build
