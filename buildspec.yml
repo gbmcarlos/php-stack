@@ -2,7 +2,7 @@ version: 0.2
 
 env:
     variables:
-        IMAGE_TAG: 2.0.1
+        IMAGE_TAG: 2.0.2
 
 phases:
     pre_build:
