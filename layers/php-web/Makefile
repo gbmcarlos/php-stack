@@ -14,6 +14,7 @@ build:
 	-t ${IMAGE_USER}/${IMAGE_REPO}:${IMAGE_TAG} \
 	--target base \
 	--build-arg PHP_NGINX_VERSION \
+	--build-arg NODEJS_VERSION \
 	${CURDIR}
 
 publish: build

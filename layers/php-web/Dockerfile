@@ -8,7 +8,7 @@ ARG PHP_NGINX_VERSION
 
 FROM gbmcarlos/php-nginx:${PHP_NGINX_VERSION} as base
 
-ARG NODEJS_VERSION=10
+ARG NODEJS_VERSION
 
 ## Nodejs
 RUN     curl -sL https://rpm.nodesource.com/setup_${NODEJS_VERSION}.x | bash - \
