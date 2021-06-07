@@ -3,9 +3,8 @@ The purpose of this project is to build a set of PHP environments as Docker imag
 
 ## Stack
 - [**PHP Base**](#php-base): Based on the PHP binaries of [Bref](http://bref.sh/), install composer, and a production-ready ini config file
-- [**PHP Extensions**](#php-extensions): Based on *PHP Base*, builds a list of extensions that can be easily included 
-- [**PHP Lambda**](#php-lambda): Based on *PHP Base*, add an AWS Lambda [PHP Runtime](https://github.com/gbmcarlos/php-runtime)
-- [**PHP Nginx**](#php-nginx): Based on *PHP Lambda*, install and configure Nginx
+- [**PHP Extensions**](#php-extensions): Based on *PHP Base*, builds a list of extensions that can be easily included
+- [**PHP Nginx**](#php-nginx): Based on *PHP Base*, install and configure Nginx
 - [**PHP API**](#php-api): Based on *PHP Nginx*, prepare some downstream triggers for a fully functional API project
 - [**PHP Web**](#php-web): Based on *PHP Nginx*, prepare some downstream triggers for a fully functional Web project
 
@@ -37,19 +36,11 @@ COPY --from=gbmcarlos/php-ext-{extension-name} /opt /opt
 Extensions:
 - [`ddtrace` (Datadog Tracer)](https://docs.datadoghq.com/tracing/faq/php-tracer-manual-installation/#install-from-source)
 
-### PHP Lambda
-
-Available as `gbmcarlos/php-lambda`.
-
-Uses [*PHP Base*](#php-base) as base image.
-
-- Installs a [PHP Runtime](https://github.com/gbmcarlos/php-runtime).
-
 ### PHP Nginx
 
 Available as `gbmcarlos/php-nginx`.
 
-Uses [*PHP Lambda*](#php-lambda) as base image.
+Uses [*PHP Base*](#php-base) as base image.
 
 - Installs Nginx.
 - Configures Nginx permissions.
