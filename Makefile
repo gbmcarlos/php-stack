@@ -13,7 +13,7 @@ export PHP_VERSION := 7.4
 export PHP_VERSION_SHORT := 74
 export BREF_VERSION := 1.2.6
 export DD_VERSION := 0.55.0
-export NODEJS_VERSION := 14
+export NODEJS_VERSION := 12
 
 # Delegate 'build' and 'publish' to each layer
 publish build: $(layers)
