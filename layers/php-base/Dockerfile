@@ -4,15 +4,20 @@
 # The result is an image where /opt contains everything required to execute PHP (+php-fpm, +composer)
 #####
 
+ARG COMPOSER_VERSION
+ARG PHP_VERSION
+ARG PHP_VERSION_SHORT
+ARG BREF_VERSION
+
 ## Composer
 ### We extract composer executable from this image
-FROM composer:2.0 as target-composer
+FROM composer:${COMPOSER_VERSION} as target-composer
 
 ## PHP config
 ### We extract php's production-ready config file from this image
-FROM php:7.4 as target-php
+FROM php:${PHP_VERSION} as target-php
 
-FROM bref/php-74-fpm:1.1.1 as base
+FROM bref/php-${PHP_VERSION_SHORT}-fpm:${BREF_VERSION} as base
 
 ### We need to switch to root to use yum
 USER root

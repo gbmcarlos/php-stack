@@ -11,6 +11,9 @@ build:
 	docker build \
 	-t ${IMAGE_USER}/${IMAGE_REPO}:${IMAGE_TAG} \
 	--target base \
+	--build-arg DD_VERSION \
+	--build-arg PHP_VERSION_SHORT \
+	--build-arg BREF_VERSION \
 	${CURDIR}
 
 publish: build

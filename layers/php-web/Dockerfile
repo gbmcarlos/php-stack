@@ -4,9 +4,11 @@
 # All these instrucionts will be executed on the downstream Dockerfile (the Dockerfile that uses this image as FROM)
 #####
 
-FROM gbmcarlos/php-nginx:2.0.0 as base
+ARG PHP_NGINX_VERSION
 
-ARG NODEJS_VERSION=10
+FROM gbmcarlos/php-nginx:${PHP_NGINX_VERSION} as base
+
+ARG NODEJS_VERSION
 
 ## Nodejs
 RUN     curl -sL https://rpm.nodesource.com/setup_${NODEJS_VERSION}.x | bash - \

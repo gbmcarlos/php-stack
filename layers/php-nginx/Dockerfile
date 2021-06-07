@@ -1,10 +1,12 @@
 #####
-# This image builds upon php-lambda
+# This image builds upon php-base
 # Here we are going to 1) install and configure nginx and 2) install the init script, which will start and controll Nginx and PHP-FPM
 # The result is an image upon which we can run PHP web applications
 #####
 
-FROM gbmcarlos/php-lambda:2.0.0 as base
+ARG PHP_BASE_VERSION
+
+FROM gbmcarlos/php-base:${PHP_BASE_VERSION} as base
 
 ## System dependencies
 RUN amazon-linux-extras install \
