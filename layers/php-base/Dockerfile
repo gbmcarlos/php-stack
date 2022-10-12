@@ -29,7 +29,7 @@ RUN     yum install -y \
             amazon-linux-extras \
             yum-plugin-ovl \
             vim htop less tree \
-            git zip unzip
+            git zip unzip tar
 
 ### Replace bref's config file with the oficial PHP image's config file
 RUN rm /opt/bref/etc/php/conf.d/bref.ini

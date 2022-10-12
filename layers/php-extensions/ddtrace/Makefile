@@ -8,7 +8,9 @@ export IMAGE_TAG := latest
 export IMAGE_REPO := php-ext-ddtrace
 
 build:
-	docker build \
+	docker buildx build \
+	--push \
+	--platform linux/arm64,linux/amd64 \
 	-t ${IMAGE_USER}/${IMAGE_REPO}:${IMAGE_TAG} \
 	--target base \
 	--build-arg DD_VERSION \

@@ -1,4 +1,4 @@
-extensions := ddtrace
+extensions := ddtrace fpm-prometheus
 
 .DEFAULT_GOAL := build
 .PHONY: build publish $(extensions)
